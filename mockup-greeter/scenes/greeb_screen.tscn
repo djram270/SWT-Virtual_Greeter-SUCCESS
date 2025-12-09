@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4380he6a17o5"]
+
+[ext_resource type="PackedScene" uid="uid://criqekfr1vr7p" path="res://models/office 1/elements/3D Objects/green_screen.glb" id="1_i2th4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m5ts5"]
+size = Vector3(2.0124207, 2.437561, 0.7788086)
+
+[node name="greeb_screen" type="StaticBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_i2th4")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 1, -0.52860516, 0, -0.76039195)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15107727, 1.1963806, 0.1105957)
+shape = SubResource("BoxShape3D_m5ts5")

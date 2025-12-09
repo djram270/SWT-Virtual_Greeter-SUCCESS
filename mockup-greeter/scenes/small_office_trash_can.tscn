@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2shfcj5xm83j"]
+
+[ext_resource type="PackedScene" uid="uid://rbgyg6tk5nww" path="res://models/office 1/elements/3D Objects/small_office_trash_can.glb" id="1_p7auv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sm375"]
+size = Vector3(0.49632645, 0.50338745, 0.33538818)
+
+[node name="small_office_trash_can" type="StaticBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_p7auv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4641627, 0, 0.6968726)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015245438, 0.24830627, 0.02456665)
+shape = SubResource("BoxShape3D_sm375")

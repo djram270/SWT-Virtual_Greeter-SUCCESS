@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp3ek67b721a5"]
+
+[ext_resource type="PackedScene" uid="uid://dl2v81a6ooh17" path="res://models/office 1/elements/3D Objects/tablet.glb" id="1_2qyfy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jwrmr"]
+size = Vector3(0.18457031, 0.029541016, 0.28801727)
+
+[node name="tablet" type="StaticBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_2qyfy")]
+transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1.2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008720785, 0.0063190013, -0.0026381686)
+shape = SubResource("BoxShape3D_jwrmr")

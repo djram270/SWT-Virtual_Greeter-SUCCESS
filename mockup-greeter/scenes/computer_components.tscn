@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://b354gwa8pcn58"]
+
+[ext_resource type="Script" uid="uid://dud86wyrx1ipq" path="res://scenes/computer_components_interaction.gd" id="1_flian"]
+[ext_resource type="PackedScene" uid="uid://dqgln8skbxwpe" path="res://models/office 1/elements/Computer_Case.fbx" id="1_yvli8"]
+[ext_resource type="PackedScene" uid="uid://byockdrwc4ya7" path="res://models/office 1/elements/Computer_Keyboard.fbx" id="2_flian"]
+[ext_resource type="PackedScene" uid="uid://dhydhj4yblgrw" path="res://models/office 1/elements/Computer_Monitor.fbx" id="3_1dsax"]
+[ext_resource type="PackedScene" uid="uid://bqo3in3ejwsm2" path="res://models/office 1/elements/Computer_Mouse.fbx" id="4_18e8h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4x1rg"]
+size = Vector3(0.8, 0.5, 0.5)
+
+[node name="computer_Components" type="StaticBody3D"]
+script = ExtResource("1_flian")
+
+[node name="Computer_Case" parent="." instance=ExtResource("1_yvli8")]
+transform = Transform3D(1, 0, 0, 0, 1.1, 0, 0, 0, 1, -7.450581e-09, -0.1, 0)
+
+[node name="Computer_Keyboard" parent="." instance=ExtResource("2_flian")]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0.4, -0.1, 0.2)
+
+[node name="Computer_Monitor" parent="." instance=ExtResource("3_1dsax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, -0.1, 0)
+
+[node name="Computer_Mouse" parent="." instance=ExtResource("4_18e8h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -0.1, 0.1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30000007, 0.14999998, 0.050000012)
+shape = SubResource("BoxShape3D_4x1rg")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dremh7idywaoe"]
+
+[ext_resource type="VideoStream" uid="uid://2lw8aba7ygjw" path="res://loadingScreenVideo/LoadingScreen.ogv" id="1_nuiy0"]
+[ext_resource type="Script" uid="uid://b3lr74wyqoqif" path="res://loading_screen.gd" id="2_41a3d"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_nuiy0")
+autoplay = true
+loop = true
+script = ExtResource("2_41a3d")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

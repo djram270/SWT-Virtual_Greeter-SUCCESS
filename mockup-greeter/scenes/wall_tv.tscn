@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://befw2ydoq77fb"]
+
+[ext_resource type="PackedScene" uid="uid://bgk5m5epupkks" path="res://models/office 1/elements/3D Objects/wall_TV.glb" id="1_da3s2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j3ooy"]
+size = Vector3(0.76068115, 0.36810303, 0.11708069)
+
+[node name="wall_TV" type="StaticBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_da3s2")]
+transform = Transform3D(0.24494398, 0, 0, 0, 0.20428352, 0, 0, 0, 0.448, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0019836426, 0.1904602, -0.046089172)
+shape = SubResource("BoxShape3D_j3ooy")

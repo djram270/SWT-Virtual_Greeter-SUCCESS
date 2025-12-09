@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://2eegrq4s7suk"]
+
+[ext_resource type="PackedScene" uid="uid://bnyo0egfyh8vk" path="res://models/office 1/elements/3D Objects/phalaenopsis.glb" id="1_8x8dx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yoh7s"]
+size = Vector3(0.19999999, 0.53, 0.35)
+
+[node name="flower" type="StaticBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_8x8dx")]
+transform = Transform3D(1.44, 0, 0, 0, 1.5600001, 0, 0, 0, 1.7, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2154064e-08, 0.16499999, 0.09500004)
+shape = SubResource("BoxShape3D_yoh7s")

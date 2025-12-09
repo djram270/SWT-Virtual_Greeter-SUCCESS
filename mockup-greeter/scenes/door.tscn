@@ -1,0 +1,134 @@
+[gd_scene load_steps=11 format=4 uid="uid://dioru7unjhjqn"]
+
+[ext_resource type="Texture2D" uid="uid://dfgtgatxpowni" path="res://models/office 1/Textures/palette1.png" id="1_hpvv5"]
+
+[sub_resource type="GDScript" id="GDScript_hpvv5"]
+script/source = "# res://scripts/door_trigger.gd
+extends Area3D
+
+var ui_shown := false
+
+func _on_body_entered(body: Node3D) -> void:
+	if body.is_in_group(\"player\"):
+		get_node(\"AnimationPlayer\").play(\"door_open\")
+
+
+func _on_body_exited(body: Node3D) -> void:
+	if body.is_in_group(\"player\"):
+		get_node(\"AnimationPlayer\").play(\"door_close\")
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jd0ar"]
+resource_name = "Palette"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_hpvv5")
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_glcr1"]
+_surfaces = [{
+"aabb": AABB(0, -0.0045395494, -0.04353879, 0.9657129, 2.0248804, 0.08707758),
+"format": 34359742465,
+"index_count": 96,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAgAEAAAAAgADAAUABAACAAYABQAGAAIABgAHAAQABAAHAAgABwAGAAkACQAGAAUACQAKAAcACAAHAAoACgAJAAEAAQAAAAoABQALAAkAAQAJAAsACwAFAAgACwAMAAEAAQAMAAMADQAMAAsAAwAMAA0ACAAOAAsACwAOAA0ACgAOAAgADgAKAAAAAAANAA4ABQADAA8ADwAIAAUADQAPAAMADwANAAAACAAPAAQAAAAEAA8A"),
+"name": "Palette",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAAAAERNAUC7VTK9AAAAAERNAUC7VTI9AAAAAIDAlLu7VTI9pil2PtXhkD+7VTI9AAAAAIDAlLu7VTK9dq45P9XhkD+7VTI99jh3P4DAlLu7VTI99jh3P4DAlLu7VTK9dq45P9XhkD+7VTK99jh3P0RNAUC7VTI99jh3P0RNAUC7VTK9dq45P7Cr5T+7VTI9pil2PrCr5T+7VTI9pil2PrCr5T+7VTK9dq45P7Cr5T+7VTK9pil2PtXhkD+7VTK9")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7omju"]
+resource_name = "Cube_055"
+_surfaces = [{
+"aabb": AABB(0, -0.0045395494, -0.04353879, 0.9657129, 2.0248804, 0.08707758),
+"attribute_data": PackedByteArray("kIMzP4hNlz6QgzM/zJScPu/fMD/MlJw+798wP4hNlz4fWzI/oFaTPu/fMD9EBpI+kIMzP0QGkj4lODM/oFaTPiU4Mz+gVpM+kIMzP0QGkj6QgzM/iE2XPiQ4Mz8o/ZU+kIMzPwC/jD6QgzM/RAaSPu/fMD9EBpI+798wPwC/jD4fWzI/GMiIPu/fMD+8d4c+kIMzP7x3hz4lODM/GMiIPh5bMj+gbos+798wPwC/jD6QgzM/AL+MPiQ4Mz+gbos+kIMzP7x3hz6QgzM/AL+MPiQ4Mz+gbos+JTgzPxjIiD7v3zA/AL+MPu/fMD9EBpI+TTwuP0QGkj5NPC4/AL+MPjInNj8Av4w+Mic2P0QGkj6QgzM/RAaSPpCDMz8Av4w+kIMzP9gDmT7v3zA/2AOZPu/fMD+E3po+kIMzP4Temj7v3zA/9E+QPpCDMz/0T5A+kIMzP0h1jj7v3zA/SHWOPk08Lj/0T5A+798wP/RPkD7v3zA/SHWOPk08Lj9IdY4+kIMzP0h1jj6QgzM/9E+QPjInNj/0T5A+Mic2P0h1jj7v3zA/iE2XPu/fMD9EBpI+H1syP6BWkz4fWzI/KP2VPpCDMz+ITZc+798wP4hNlz4fWzI/KP2VPiQ4Mz8o/ZU+"),
+"format": 34359742487,
+"index_count": 96,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAEQAQABQAFAAVABEAFgAVABQAFAAXABYAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwAMAAxADIAMgAzADAANAA1ADYANgA3ADQAOAA5ADoAOgA7ADgA"),
+"material": SubResource("StandardMaterial3D_jd0ar"),
+"name": "Palette",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 60,
+"vertex_data": PackedByteArray("AAAAAERNAUC7VTK9AAAAAERNAUC7VTI9AAAAAIDAlLu7VTI9AAAAAIDAlLu7VTK9dq45P9XhkD+7VTK99jh3P4DAlLu7VTK99jh3P0RNAUC7VTK9dq45P7Cr5T+7VTK9dq45P7Cr5T+7VTK99jh3P0RNAUC7VTK9AAAAAERNAUC7VTK9pil2PrCr5T+7VTK99jh3P0RNAUC7VTI99jh3P0RNAUC7VTK99jh3P4DAlLu7VTK99jh3P4DAlLu7VTI9pil2PtXhkD+7VTI9AAAAAIDAlLu7VTI9AAAAAERNAUC7VTI9pil2PrCr5T+7VTI9dq45P9XhkD+7VTI99jh3P4DAlLu7VTI99jh3P0RNAUC7VTI9dq45P7Cr5T+7VTI9AAAAAERNAUC7VTI99jh3P0RNAUC7VTI9dq45P7Cr5T+7VTI9pil2PrCr5T+7VTI99jh3P4DAlLu7VTI99jh3P4DAlLu7VTK9AAAAAIDAlLu7VTK9AAAAAIDAlLu7VTI9AAAAAERNAUC7VTI9AAAAAERNAUC7VTK99jh3P0RNAUC7VTK99jh3P0RNAUC7VTI9pil2PrCr5T+7VTK9pil2PtXhkD+7VTK9pil2PtXhkD+7VTI9pil2PrCr5T+7VTI9dq45P9XhkD+7VTK9dq45P7Cr5T+7VTK9dq45P7Cr5T+7VTI9dq45P9XhkD+7VTI9pil2PtXhkD+7VTK9dq45P9XhkD+7VTK9dq45P9XhkD+7VTI9pil2PtXhkD+7VTI9dq45P7Cr5T+7VTI9dq45P7Cr5T+7VTK9pil2PrCr5T+7VTK9pil2PrCr5T+7VTI9AAAAAIDAlLu7VTK99jh3P4DAlLu7VTK9dq45P9XhkD+7VTK9pil2PtXhkD+7VTK9AAAAAERNAUC7VTK9AAAAAIDAlLu7VTK9pil2PtXhkD+7VTK9pil2PrCr5T+7VTK9AAD/f/9///8AAP9//3///wAA/3//f///AAD/f/9//////////3//////////f/////////9//////////3//////AAAAgP7///8AAACA/v///wAAAID+////AAAAgP7/////f/9///////9//3///////3//f///////f/9/////f/9//3/+//9//3//f/7//3//f/9/////f/9//3////9//3//f/7//3//f/9//v//f/9//3////9//3//f////3//f/5//v//f/9//n/+//9//3/+f/7//3//f/5//v//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+/////f/9/AAD///9//38AAP///3//fwAA////f/9/AAAAAP9//38AAAAA/3//fwAAAAD/f/9/AAAAAP9//38AAP9///////8//3///////z//f///////P/9///////8//38AAAAA/z//fwAAAAD/P/9/AAAAAP8//38AAAAA/z///////3/+////////f/7///////9//v///////3/+////////f/////////9//////////3//////////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_glcr1")
+
+[sub_resource type="Animation" id="Animation_la1wf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door_area/door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_18pbm"]
+resource_name = "door_close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door_area/door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_83dcw"]
+resource_name = "door_open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door_area/door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5707964, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q5w8r"]
+_data = {
+&"RESET": SubResource("Animation_la1wf"),
+&"door_close": SubResource("Animation_18pbm"),
+&"door_open": SubResource("Animation_83dcw")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uvdjg"]
+size = Vector3(0.96484375, 2.017517, 0.08503418)
+
+[node name="door" type="Node3D"]
+
+[node name="door_area" type="Area3D" parent="."]
+script = SubResource("GDScript_hpvv5")
+
+[node name="door" type="MeshInstance3D" parent="door_area"]
+mesh = SubResource("ArrayMesh_7omju")
+skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="door_area"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_q5w8r")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="door_area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48242188, 1.0087585, -0.0019165277)
+shape = SubResource("BoxShape3D_uvdjg")
+
+[connection signal="body_entered" from="door_area" to="door_area" method="_on_body_entered"]
+[connection signal="body_exited" from="door_area" to="door_area" method="_on_body_exited"]

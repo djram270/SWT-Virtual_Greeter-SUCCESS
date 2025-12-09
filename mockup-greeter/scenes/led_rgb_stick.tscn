@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cspqvp44o6a5e"]
+
+[ext_resource type="PackedScene" uid="uid://tsrw8td7vod3" path="res://models/office 1/elements/Ceiling_Lamp_3.fbx" id="1_xt25a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0c7xk"]
+size = Vector3(1.088623, 0.31677246, 0.19794923)
+
+[node name="ceiling_lamp" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0010986328, 0.1383667, 0.0010254085)
+shape = SubResource("BoxShape3D_0c7xk")
+
+[node name="Ceiling_Lamp_3" parent="." instance=ExtResource("1_xt25a")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -0.019691467)
+visible = false
+light_energy = 2.0
+shadow_enabled = true
+spot_range = 20.0
+spot_angle = 69.6627
+spot_angle_attenuation = 0.18301113
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+shadow_enabled = true
+omni_range = 10.0

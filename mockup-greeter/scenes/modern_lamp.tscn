@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://h2dwv7r4meb4"]
+
+[ext_resource type="PackedScene" uid="uid://dc64mjpqu07y8" path="res://models/office 1/elements/modern_lamp.gltf" id="1_sdi3e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0xt4d"]
+size = Vector3(1.23, 1.49, 0.44)
+
+[node name="modern_lamp" type="StaticBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_sdi3e")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43499994, 0.775, -0.009999961)
+shape = SubResource("BoxShape3D_0xt4d")

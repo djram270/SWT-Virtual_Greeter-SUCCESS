@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://q8lu6w6vcb0j"]
+
+[ext_resource type="PackedScene" uid="uid://dhydhj4yblgrw" path="res://models/office 1/elements/Computer_Monitor.fbx" id="1_f81rh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_be1dt"]
+size = Vector3(0.88, 1.11, 0.17999999)
+
+[node name="computer_monitor" type="StaticBody3D"]
+
+[node name="Computer_Monitor" parent="." instance=ExtResource("1_f81rh")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 0.004999995, 0.2825, -0.030000009)
+shape = SubResource("BoxShape3D_be1dt")

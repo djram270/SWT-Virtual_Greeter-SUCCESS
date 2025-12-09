@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7yhkxgiyu7yu"]
+
+[ext_resource type="PackedScene" uid="uid://dqgln8skbxwpe" path="res://models/office 1/elements/Computer_Case.fbx" id="1_rjmvb"]
+[ext_resource type="PackedScene" uid="uid://byockdrwc4ya7" path="res://models/office 1/elements/Computer_Keyboard.fbx" id="2_3r40j"]
+[ext_resource type="PackedScene" uid="uid://dhydhj4yblgrw" path="res://models/office 1/elements/Computer_Monitor.fbx" id="3_bwpu8"]
+[ext_resource type="PackedScene" uid="uid://bqo3in3ejwsm2" path="res://models/office 1/elements/Computer_Mouse.fbx" id="4_02fnk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5xhvn"]
+size = Vector3(0.90000004, 0.5, 0.6)
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Computer_Case" parent="CSGCombiner3D" instance=ExtResource("1_rjmvb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, -0.1)
+
+[node name="Computer_Keyboard" parent="CSGCombiner3D" instance=ExtResource("2_3r40j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2)
+
+[node name="Computer_Monitor" parent="CSGCombiner3D" instance=ExtResource("3_bwpu8")]
+
+[node name="Computer_Mouse" parent="CSGCombiner3D" instance=ExtResource("4_02fnk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 0.1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049999982, 0.25, 0)
+shape = SubResource("BoxShape3D_5xhvn")

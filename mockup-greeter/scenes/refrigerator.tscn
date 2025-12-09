@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://2ch5g6ueaivs"]
+
+[ext_resource type="PackedScene" uid="uid://cdlcsxbgcyr60" path="res://models/office 1/elements/3D Objects/refrigerator.glb" id="1_xhls8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y5qbb"]
+size = Vector3(0.95843124, 2.5269165, 1.0396118)
+
+[node name="refrigerator" type="StaticBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_xhls8")]
+transform = Transform3D(0.25919998, 0, 0, 0, 0.4032, 0, 0, 0, 0.30527997, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06226158, 0.57662964, 0.004058838)
+shape = SubResource("BoxShape3D_y5qbb")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cff2alsurkx0m"]
+
+[ext_resource type="PackedScene" uid="uid://cb5ejdnlu1vxf" path="res://models/office 1/elements/3D Objects/coffeeMachine.dae" id="1_6qfhk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8bn4r"]
+size = Vector3(0.31024292, 0.49736083, 0.2620874)
+
+[node name="coffeeMachine" type="StaticBody3D"]
+
+[node name="coffeeMachine" parent="." instance=ExtResource("1_6qfhk")]
+transform = Transform3D(1.68, 0, 0, 0, 1.6497413, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12864637, 0.24868041, -0.14182983)
+shape = SubResource("BoxShape3D_8bn4r")

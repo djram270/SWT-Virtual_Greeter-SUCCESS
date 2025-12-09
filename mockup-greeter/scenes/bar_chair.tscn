@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b48rvrj4bkqu7"]
+
+[ext_resource type="PackedScene" uid="uid://4id53hc1yx3w" path="res://models/office 1/elements/3D Objects/bar_chair.glb" id="1_dto7u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8jtpn"]
+size = Vector3(0.61364746, 1.1786499, 0.5951538)
+
+[node name="bar_chair" type="StaticBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_dto7u")]
+transform = Transform3D(0.32, 0, 0, 0, 0.24, 0, 0, 0, 0.32, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038757324, 0.5902405, 0.0030822754)
+shape = SubResource("BoxShape3D_8jtpn")

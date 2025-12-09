@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwmish21muqmj"]
+
+[ext_resource type="PackedScene" uid="uid://dw5d5ixi14kce" path="res://models/office 1/elements/Chair_Office_Base_C.fbx" id="1_1n3kk"]
+[ext_resource type="PackedScene" uid="uid://biqxwdqbdj5rs" path="res://models/office 1/elements/Chair_Office_Bottom.fbx" id="2_bqnxs"]
+[ext_resource type="PackedScene" uid="uid://b1dh1nlo6hggo" path="res://models/office 1/elements/Chair_Office_Wheel_Copy.fbx" id="3_vipku"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_thgid"]
+size = Vector3(0.75598145, 1.3031006, 0.80041504)
+
+[node name="office_chair" type="StaticBody3D"]
+
+[node name="Chair_Office_Base_C" parent="." instance=ExtResource("1_1n3kk")]
+
+[node name="Chair_Office_Bottom" parent="." instance=ExtResource("2_bqnxs")]
+
+[node name="Chair_Office_Wheel_Copy" parent="Chair_Office_Bottom" instance=ExtResource("3_vipku")]
+transform = Transform3D(0.19002087, 0, 0.98178005, 0, 1, 0, -0.98178005, 0, 0.19002087, 0.338479, 0.04029856, 0.11138112)
+
+[node name="Chair_Office_Wheel_Copy2" parent="Chair_Office_Bottom" instance=ExtResource("3_vipku")]
+transform = Transform3D(0.7781226, 0, 0.62811244, 0, 1, 0, -0.62811244, 0, 0.7781226, -0.21526565, 0.04029856, -0.29444897)
+
+[node name="Chair_Office_Wheel_Copy3" parent="Chair_Office_Bottom" instance=ExtResource("3_vipku")]
+transform = Transform3D(0.7781226, 0, 0.62811244, 0, 1, 0, -0.62811244, 0, 0.7781226, 0.20332393, 0.04029856, -0.28535184)
+
+[node name="Chair_Office_Wheel_Copy4" parent="Chair_Office_Bottom" instance=ExtResource("3_vipku")]
+transform = Transform3D(0.7781226, 0, 0.62811244, 0, 1, 0, -0.62811244, 0, 0.7781226, -0.33676857, 0.04029856, 0.11076042)
+
+[node name="Chair_Office_Wheel_Copy5" parent="Chair_Office_Bottom" instance=ExtResource("3_vipku")]
+transform = Transform3D(0.7781226, 0, 0.62811244, 0, 1, 0, -0.62811244, 0, 0.7781226, -0.0019479133, 0.04029856, 0.358382)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0095825195, 0.6672081, 0.023620605)
+shape = SubResource("BoxShape3D_thgid")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cctijhneabovs"]
+
+[ext_resource type="PackedScene" uid="uid://cli1hfqh0o5qr" path="res://models/office 1/elements/3D Objects/white_shelf.glb" id="1_he6yd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q82gh"]
+size = Vector3(0.65670776, 2.5134277, 0.6286621)
+
+[node name="white_shelf" type="StaticBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_he6yd")]
+transform = Transform3D(0.63, 0, 0, 0, 1.296, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020339966, -0.043426514, 0.0022137165)
+shape = SubResource("BoxShape3D_q82gh")

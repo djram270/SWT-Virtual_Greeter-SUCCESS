@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://xokyoo6e6tbs"]
+
+[ext_resource type="PackedScene" uid="uid://wx0l0ndmg6yi" path="res://models/office 1/elements/3D Objects/kitchenCounter.glb" id="1_ih7en"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ia4k"]
+size = Vector3(3.1175842, 0.94537354, 0.6445923)
+
+[node name="kitchenCounter" type="StaticBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_ih7en")]
+transform = Transform3D(1.68, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4891472, 0.47183335, 0.3212105)
+shape = SubResource("BoxShape3D_2ia4k")

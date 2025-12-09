@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdsjr0ni0gein"]
+
+[ext_resource type="Script" uid="uid://dlvhbkwpmuiip" path="res://scenes/white_board_big.gd" id="1_8s0rl"]
+[ext_resource type="PackedScene" uid="uid://d2sgxqf7skwpv" path="res://models/office 1/elements/WhiteBoard_Big.fbx" id="1_fhupq"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8s0rl"]
+points = PackedVector3Array(1.0288541, 0.5191891, 0.043366212, 1.0288541, 0.51511085, 0.05345845, 1.0288541, 0.5191891, -0.032827053, -1.0288541, 0.5191891, 0.043366212, 1.0288541, 0.5050173, 0.057642657, -1.0288541, 0.51511085, 0.05345845, 1.0288541, -0.5222807, -0.032827053, -1.0288541, 0.5191891, -0.032827053, 1.0288541, -0.4645742, 0.1272697, -1.0288541, 0.5050173, 0.057642657, 1.0288541, -0.5222807, 0.1272697, -1.0288541, -0.5222807, -0.032827053, -1.0288541, -0.4645742, 0.1272697, -1.0288541, -0.5222807, 0.1272697)
+
+[node name="whiteBoard_Big" type="StaticBody3D"]
+script = ExtResource("1_8s0rl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_8s0rl")
+
+[node name="WhiteBoard_Big" parent="." instance=ExtResource("1_fhupq")]

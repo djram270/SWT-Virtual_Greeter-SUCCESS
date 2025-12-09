@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcvkp6xsm7bqi"]
+
+[ext_resource type="PackedScene" uid="uid://d0dlvtsfdod28" path="res://models/office 1/elements/Door_Frame.fbx" id="1_spxk3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d2vnu"]
+size = Vector3(0.11550293, 2.1000001, 0.24902344)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ifs8g"]
+size = Vector3(0.93222046, 0.08898926, 0.25042725)
+
+[node name="door_frame" type="StaticBody3D"]
+
+[node name="Door_Frame" parent="." instance=ExtResource("1_spxk3")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036486823, 1.0500001, 0.004987344)
+shape = SubResource("BoxShape3D_d2vnu")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0103765, 1.0500001, 0.004987344)
+shape = SubResource("BoxShape3D_d2vnu")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48654014, 2.057508, 0.0055236816)
+shape = SubResource("BoxShape3D_ifs8g")

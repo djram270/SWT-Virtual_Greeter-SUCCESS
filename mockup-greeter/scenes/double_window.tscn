@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://lktpskjhmakp"]
+
+[ext_resource type="PackedScene" uid="uid://dqfk0gk2q88ih" path="res://models/office 1/elements/3D Objects/double_window.glb" id="1_snqtg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_idaok"]
+size = Vector3(1.8536072, 1.6129761, 0.1352539)
+
+[node name="double_window" type="StaticBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_snqtg")]
+transform = Transform3D(0.02602217, 0, 0, 0, 0.014126084, 0, 0, 0, 0.003377835, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.048477173, 0.8003235, 0.066337705)
+shape = SubResource("BoxShape3D_idaok")

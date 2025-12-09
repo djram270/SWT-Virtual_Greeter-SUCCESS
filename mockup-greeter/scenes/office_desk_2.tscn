@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://chx1mkxjb3cs"]
+
+[ext_resource type="PackedScene" uid="uid://cwqffm55kgrei" path="res://models/office 1/elements/Office_Desk_2.fbx" id="1_fjxj1"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fjxj1"]
+points = PackedVector3Array(0.7393463, 0.9489443, 0.375, 0.7393463, 0.8963531, 0.375, 0.7393463, 0.9489443, -0.375, -0.7393463, 0.9489443, 0.375, 0.7325434, -0.0018851347, 0.3589223, 0.7393463, 0.8963531, -0.375, -0.7393463, 0.8963531, 0.375, -0.7393463, 0.9489443, -0.375, 0.7325434, -0.0018851347, -0.36604345, -0.7326881, -0.0018851347, 0.3589223, -0.7393463, 0.8963531, -0.375, -0.7326881, -0.0018851347, -0.36604345)
+
+[node name="Office_Desk_2" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_fjxj1")
+
+[node name="Office_Desk_2" parent="." instance=ExtResource("1_fjxj1")]

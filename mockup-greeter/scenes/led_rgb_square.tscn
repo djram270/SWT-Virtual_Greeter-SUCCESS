@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqrm28u07nwcc"]
+
+[ext_resource type="Script" uid="uid://b00s4j61051gi" path="res://scenes/led_rgb_square_interaction.gd" id="1_mb4ks"]
+[ext_resource type="PackedScene" uid="uid://tsrw8td7vod3" path="res://models/office 1/elements/Ceiling_Lamp_3.fbx" id="1_vct6x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0c7xk"]
+size = Vector3(1.048584, 0.31677246, 1.0671021)
+
+[node name="ceiling_lamp" type="StaticBody3D"]
+script = ExtResource("1_mb4ks")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004272461, -0.18420094, -0.014080808)
+shape = SubResource("BoxShape3D_0c7xk")
+
+[node name="Ceiling_Lamp_3" parent="." instance=ExtResource("1_vct6x")]
+transform = Transform3D(1, 0, 0, 0, 12.857841, 0, 0, 0, 13.330232, 0, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.12538528, -0.019691467)
+light_energy = 2.0
+shadow_enabled = true
+spot_range = 3.856
+spot_angle = 84.66
+spot_angle_attenuation = 0.18301113
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+shadow_enabled = true
+omni_range = 10.0

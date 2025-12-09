@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1jqjtccf0fpa"]
+
+[ext_resource type="PackedScene" uid="uid://chaipcmxeh8to" path="res://models/office 1/elements/3D Objects/curtainswhite.glb" id="1_ep71s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nkpp8"]
+size = Vector3(2.224945, 1.7455139, 0.11047363)
+
+[node name="curtains_white" type="StaticBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_ep71s")]
+transform = Transform3D(0.024143409, 0, 0, 0, 0.015371165, 0, 0, 0, 0.016722947, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003921509, 0.89463806, 0.00592041)
+shape = SubResource("BoxShape3D_nkpp8")

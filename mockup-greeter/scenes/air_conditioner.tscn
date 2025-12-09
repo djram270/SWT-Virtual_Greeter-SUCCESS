@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://nlks4spebitb"]
+
+[ext_resource type="Script" uid="uid://kn4yd05kypil" path="res://scenes/air_conditioner_interaction.gd" id="1_chisw"]
+[ext_resource type="PackedScene" uid="uid://2mbmv5g6i2f1" path="res://models/office 1/elements/AirConditioner_A.fbx" id="1_rwb7f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_chisw"]
+size = Vector3(1.5497742, 0.33825684, 0.38061523)
+
+[node name="airConditioner" type="StaticBody3D"]
+script = ExtResource("1_chisw")
+
+[node name="AirConditioner_A" parent="." instance=ExtResource("1_rwb7f")]
+transform = Transform3D(1.109, 0, 0, 0, 1.167, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0005950928, -0.0095825195, 0.0015869141)
+shape = SubResource("BoxShape3D_chisw")

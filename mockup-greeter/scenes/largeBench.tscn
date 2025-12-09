@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2sfbqat17fs7"]
+
+[ext_resource type="PackedScene" uid="uid://bp7jlmttptpd0" path="res://models/office 1/elements/Stool.fbx" id="1_cx0cb"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bii4a"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="Stool" parent="." instance=ExtResource("1_cx0cb")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.35200003, 0, 0, 0, 0.39999998, 0, 0.38048002, 0)
+shape = SubResource("CylinderShape3D_bii4a")

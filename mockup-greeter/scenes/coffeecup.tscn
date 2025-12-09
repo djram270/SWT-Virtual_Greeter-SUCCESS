@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://5ns6105u21p8"]
+
+[ext_resource type="PackedScene" uid="uid://bdn2ddj76tcdx" path="res://models/office 1/elements/3D Objects/CoffeeCup_Filled.fbx" id="1_7m6in"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uvdb4"]
+size = Vector3(0.16, 0.089999996, 0.11)
+
+[node name="coffeecup" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009999983, 0.08499999, 0.004999995)
+shape = SubResource("BoxShape3D_uvdb4")
+
+[node name="CoffeeCup_Filled" parent="." instance=ExtResource("1_7m6in")]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://xblc2cbffrg8"]
+
+[ext_resource type="PackedScene" uid="uid://d3261t1053ngd" path="res://models/office 1/elements/3D Objects/planter7.glb" id="1_86cwo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fedb8"]
+size = Vector3(0.35, 0.47, 0.39)
+
+[node name="planter" type="StaticBody3D"]
+
+[node name="planter7" parent="." instance=ExtResource("1_86cwo")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.68, 0, 5.68)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24500003, 0.26500002, -0.08499998)
+shape = SubResource("BoxShape3D_fedb8")

@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4rbgnigrl4sj"]
+
+[sub_resource type="GDScript" id="GDScript_jcgpl"]
+script/source = "extends CharacterBody3D
+
+@export var move_speed : float = 6.0
+@export var look_speed : float = 0.002
+@export var gravity : float = 9.8
+
+@export var input_left : String = \"ui_left\"
+@export var input_right : String = \"ui_right\"
+@export var input_forward : String = \"ui_up\"
+@export var input_back : String = \"ui_down\"
+
+var mouse_captured : bool = false
+var look_rotation : Vector2
+var velocity_y : float = 0.0
+
+@onready var head: Node3D = $Head
+
+func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	mouse_captured = true
+	look_rotation.y = rotation.y
+	look_rotation.x = head.rotation.x
+
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_key_pressed(KEY_ESCAPE):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		mouse_captured = false
+	
+	if mouse_captured and event is InputEventMouseMotion:
+		rotate_look(event.relative)
+
+func _physics_process(delta: float) -> void:
+	# Movimiento lateral
+	var input_dir := Input.get_vector(input_left, input_right, input_forward, input_back)
+	var move_dir := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+
+	velocity.x = move_dir.x * move_speed
+	velocity.z = move_dir.z * move_speed
+
+	# Aplicar gravedad (solo si no está en el suelo)
+	if not is_on_floor():
+		velocity_y -= gravity * delta
+	else:
+		velocity_y = 0.0  # se reinicia al tocar el suelo
+
+	velocity.y = velocity_y
+
+	move_and_slide()
+
+func rotate_look(rot_input : Vector2):
+	look_rotation.x -= rot_input.y * look_speed
+	look_rotation.x = clamp(look_rotation.x, deg_to_rad(-85), deg_to_rad(85))
+	look_rotation.y -= rot_input.x * look_speed
+	transform.basis = Basis()
+	rotate_y(look_rotation.y)
+	head.transform.basis = Basis()
+	head.rotate_x(look_rotation.x)
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
+albedo_color = Color(0.91806, 0.575202, 0.222449, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ucva2"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iof21"]
+radius = 0.4
+height = 1.8
+
+[node name="ProtoController" type="CharacterBody3D" groups=["player"]]
+script = SubResource("GDScript_jcgpl")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+material_override = SubResource("StandardMaterial3D_iof21")
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_ucva2")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_iof21")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]

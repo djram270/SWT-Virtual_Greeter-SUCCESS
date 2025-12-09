@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cljg3eilhj5g2"]
+
+[ext_resource type="PackedScene" uid="uid://gdprf3dtdwmv" path="res://models/office 1/elements/3D Objects/low_poly_lamp.glb" id="1_xfgit"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3lsru"]
+size = Vector3(0.40185547, 0.54504395, 0.40130615)
+
+[node name="low_poly_lamp" type="StaticBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_xfgit")]
+transform = Transform3D(0.108864, 0, 0, 0, 0.07127997, 0, 0, 0, 0.10368, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00024414063, 0.17391562, 0.011138916)
+shape = SubResource("BoxShape3D_3lsru")
